@@ -68,7 +68,7 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
         });
         jPanel1.add(Exit_Conf_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(834, 713, 147, 47));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\admin\\Downloads\\output-onlinepngtools (1).png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/amiable/airlines/output-onlinepngtools (1).png"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 10, -1, -1));
 
         jButton1.setText("Exit");
