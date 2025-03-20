@@ -72,6 +72,7 @@ public class Book_A_Flight extends javax.swing.JFrame {
         flightFromText = new javax.swing.JLabel();
         flightToText = new javax.swing.JLabel();
         flightClassText = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         mdp.setFont(new java.awt.Font("Aller", 1, 12)); // NOI18N
         mdp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Credit /Debit Card", "E-Wallet" }));
@@ -120,11 +121,13 @@ public class Book_A_Flight extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 102, 255));
+        setResizable(false);
 
         jPanel1.setForeground(new java.awt.Color(153, 204, 255));
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(91, 202, 226));
         jPanel2.setForeground(new java.awt.Color(176, 208, 240));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         F_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Local", "International" }));
         F_Type.setMinimumSize(new java.awt.Dimension(28, 22));
@@ -133,6 +136,7 @@ public class Book_A_Flight extends javax.swing.JFrame {
                 F_TypeActionPerformed(evt);
             }
         });
+        jPanel2.add(F_Type, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 41, -1, -1));
 
         F_To.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
             public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
@@ -148,6 +152,7 @@ public class Book_A_Flight extends javax.swing.JFrame {
                 F_ToActionPerformed(evt);
             }
         });
+        jPanel2.add(F_To, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 105, 88, -1));
 
         F_From.setToolTipText("");
         F_From.setBorder(null);
@@ -166,6 +171,9 @@ public class Book_A_Flight extends javax.swing.JFrame {
                 F_FromActionPerformed(evt);
             }
         });
+        jPanel2.add(F_From, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 72, 88, -1));
+
+        jPanel2.add(F_Class, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 138, 88, -1));
 
         Return_button.setBackground(new java.awt.Color(51, 51, 255));
         Return_button.setText("Return");
@@ -174,29 +182,35 @@ public class Book_A_Flight extends javax.swing.JFrame {
                 Return_buttonActionPerformed(evt);
             }
         });
+        jPanel2.add(Return_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(625, 293, 70, 30));
 
         passport.setToolTipText("A0000000A");
+        jPanel2.add(passport, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 40, 171, -1));
 
         passport_text.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
         passport_text.setForeground(new java.awt.Color(255, 255, 255));
         passport_text.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         passport_text.setText("Passport ID:");
+        jPanel2.add(passport_text, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 85, -1));
 
         namaewa.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
         namaewa.setForeground(new java.awt.Color(255, 255, 255));
         namaewa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         namaewa.setText("Full Name:");
+        jPanel2.add(namaewa, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 85, -1));
 
         namae.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 namaeActionPerformed(evt);
             }
         });
+        jPanel2.add(namae, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 171, -1));
 
         p_option.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         p_option.setForeground(new java.awt.Color(255, 255, 255));
         p_option.setText("Passenger Option :");
         p_option.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel2.add(p_option, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
 
         mdp1.setFont(new java.awt.Font("Aller", 1, 12)); // NOI18N
         mdp1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Credit /Debit Card", "E-Wallet" }));
@@ -205,21 +219,25 @@ public class Book_A_Flight extends javax.swing.JFrame {
                 mdp1ActionPerformed(evt);
             }
         });
+        jPanel2.add(mdp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 197, 265, -1));
 
         mode_of_payment_text1.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
         mode_of_payment_text1.setForeground(new java.awt.Color(255, 255, 255));
         mode_of_payment_text1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         mode_of_payment_text1.setText("Payment Method:");
+        jPanel2.add(mode_of_payment_text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 199, 245, -1));
 
         date_of_flight_text1.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
         date_of_flight_text1.setForeground(new java.awt.Color(255, 255, 255));
         date_of_flight_text1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         date_of_flight_text1.setText("Date of Flight:");
+        jPanel2.add(date_of_flight_text1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 225, 245, -1));
 
         dtr1.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
         dtr1.setForeground(new java.awt.Color(255, 255, 255));
         dtr1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         dtr1.setText("Date of Return:");
+        jPanel2.add(dtr1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 251, 245, -1));
 
         book_flight_button1.setBackground(new java.awt.Color(74, 144, 226));
         book_flight_button1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
@@ -232,162 +250,63 @@ public class Book_A_Flight extends javax.swing.JFrame {
                 book_flight_button1ActionPerformed(evt);
             }
         });
+        jPanel2.add(book_flight_button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 292, 528, 33));
 
         date_of_flight1.setText("yyyy-MM-dd");
+        jPanel2.add(date_of_flight1, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 225, 265, -1));
 
         date_of_return1.setText("yyyy-MM-dd");
+        jPanel2.add(date_of_return1, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 251, 265, -1));
 
         ps_option2.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         ps_option2.setForeground(new java.awt.Color(255, 255, 255));
         ps_option2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ps_option2.setText("Flight Option :");
         ps_option2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel2.add(ps_option2, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 172, 528, -1));
 
         p_option1.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         p_option1.setForeground(new java.awt.Color(255, 255, 255));
         p_option1.setText("Ticketing Option:");
         p_option1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jPanel2.add(p_option1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 13, 210, -1));
 
         flightTypeText.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
         flightTypeText.setForeground(new java.awt.Color(255, 255, 255));
         flightTypeText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         flightTypeText.setText("Flight Type:");
+        jPanel2.add(flightTypeText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 41, 99, -1));
 
         flightFromText.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
         flightFromText.setForeground(new java.awt.Color(255, 255, 255));
         flightFromText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         flightFromText.setText("Flight From:");
+        jPanel2.add(flightFromText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 72, 99, -1));
 
         flightToText.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
         flightToText.setForeground(new java.awt.Color(255, 255, 255));
         flightToText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         flightToText.setText("Flight To:");
+        jPanel2.add(flightToText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 106, 99, -1));
 
         flightClassText.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
         flightClassText.setForeground(new java.awt.Color(255, 255, 255));
         flightClassText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         flightClassText.setText("Flight Class:");
+        jPanel2.add(flightClassText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 139, 99, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(p_option1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(flightTypeText, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(passport_text, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(passport, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(p_option)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(namaewa, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(namae, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(flightToText, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(flightFromText, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(flightClassText, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(F_Type, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(F_Class, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(F_From, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(F_To, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(book_flight_button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(ps_option2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(dtr1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(mode_of_payment_text1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(date_of_flight_text1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(mdp1, javax.swing.GroupLayout.Alignment.TRAILING, 0, 265, Short.MAX_VALUE)
-                                    .addComponent(date_of_flight1)
-                                    .addComponent(date_of_return1))))
-                        .addGap(29, 29, 29)
-                        .addComponent(Return_button)))
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(p_option)
-                    .addComponent(p_option1))
-                .addGap(9, 9, 9)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(passport_text)
-                            .addComponent(passport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(namae, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(namaewa)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(F_Type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(flightTypeText))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(F_From, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(flightFromText))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(F_To, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(flightToText))
-                        .addGap(11, 11, 11)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(F_Class, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(flightClassText))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Return_button, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(ps_option2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(mdp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mode_of_payment_text1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(date_of_flight_text1)
-                            .addComponent(date_of_flight1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dtr1)
-                            .addComponent(date_of_return1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(21, 21, 21)
-                        .addComponent(book_flight_button1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\admin\\Downloads\\output-onlinepngtools (1).png")); // NOI18N
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, -10, -1, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -691,6 +610,7 @@ public class Book_A_Flight extends javax.swing.JFrame {
     private javax.swing.JLabel flightFromText;
     private javax.swing.JLabel flightToText;
     private javax.swing.JLabel flightTypeText;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JComboBox<String> mdp;
