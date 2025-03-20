@@ -111,16 +111,16 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
 
     private void Exit_Conf_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Exit_Conf_buttonActionPerformed
     ExitConfirmationPanel Exit = new ExitConfirmationPanel();
-    Exit.setBounds(this.getX(), this.getY(), 570, 500);
+    Exit.setBounds(this.getX(), this.getY(), Exit.getWidth(), Exit.getHeight());
     Exit.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_Exit_Conf_buttonActionPerformed
 
     private void Book_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Book_buttonActionPerformed
     this.setVisible(false);
-    ExitConfirmationPanel exit = new ExitConfirmationPanel();
     Book_A_Flight booking = new Book_A_Flight();
-    booking.setBounds(this.getX(), this.getY(), 311, 130);
+    
+    booking.setBounds(this.getX(), this.getY(), booking.getWidth(), booking.getHeight());
     booking.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_Book_buttonActionPerformed
