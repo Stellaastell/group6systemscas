@@ -119,7 +119,6 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
     private void Book_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Book_buttonActionPerformed
     this.setVisible(false);
     Book_A_Flight booking = new Book_A_Flight();
-    
     booking.setBounds(this.getX(), this.getY(), booking.getWidth(), booking.getHeight());
     booking.setVisible(true);
     this.dispose();

@@ -592,6 +592,9 @@ public class Book_A_Flight extends javax.swing.JFrame {
                     if (F_Class.getSelectedItem() != ""){
                         if (passport.getText() != "" && passport.getText().length() == 9){
                             if (namae.getText() != "" && namae.getText().length() >= 6){
+                                
+                                
+                                
                                 var result = flightdb.addFlight(
                                     F_Type.getSelectedItem().toString(),
                                     F_To.getSelectedItem().toString(),
@@ -626,6 +629,9 @@ public class Book_A_Flight extends javax.swing.JFrame {
         } else {
             alert("Please select a flight type!");
         }
+        
+        
+        
     }//GEN-LAST:event_book_flight_button1ActionPerformed
  public static void alert(String mess){
         JOptionPane.showMessageDialog(null, mess, "Alert!", JOptionPane.WARNING_MESSAGE);
