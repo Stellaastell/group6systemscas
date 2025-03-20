@@ -54,7 +54,7 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -79,7 +79,7 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -97,7 +97,7 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
+                .addGap(60, 60, 60)
                 .addComponent(Book_button, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Check_Flight_button, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -113,14 +113,16 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
     ExitConfirmationPanel Exit = new ExitConfirmationPanel();
     Exit.setBounds(this.getX(), this.getY(), 570, 500);
     Exit.setVisible(true);
+    this.dispose();
     }//GEN-LAST:event_Exit_Conf_buttonActionPerformed
 
     private void Book_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Book_buttonActionPerformed
     this.setVisible(false);
+    ExitConfirmationPanel exit = new ExitConfirmationPanel();
     Book_A_Flight booking = new Book_A_Flight();
-    booking.setBounds(this.getX(), this.getY(), 570, 500);
+    booking.setBounds(this.getX(), this.getY(), 311, 130);
     booking.setVisible(true);
-    
+    this.dispose();
     }//GEN-LAST:event_Book_buttonActionPerformed
 
     /**

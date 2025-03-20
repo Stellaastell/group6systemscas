@@ -5,17 +5,29 @@
  */
 package amiable.airlines;
 
+import java.awt.Dimension;
+import java.awt.IllegalComponentStateException;
+import java.awt.Point;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.SwingUtilities;
+import javax.swing.plaf.basic.BasicComboPopup;
+
 /**
  *
  * @author admin
  */
 public class Book_A_Flight extends javax.swing.JFrame {
-    
-    String[] Local = {"Select", "Ninoy Aquino International Airport (NAIA) - Manila,", "AIMABLE AIRPORT - ANTIPOLSS"};
-    String[] International = {"Select", };
+    //SORT THESE ALPHABETICALLY
+    String[] Local = {"Select", "Ninoy Aquino International Airport (NAIA) - Manila", "Mactan-Cebu International Airport - Cebu", "Clark International Airport - Pampanga", "Francisco Bangoy Internaitnoal Airport - Davao", "Iloilo International Airport - Iloilo", "Cagayan de Oro Airport - Cagayan de Oro", "Kalibo Internaitnoal Airport - Kalibo, Aklan", "Zamboanga Internaional Airport - Zamboanga", "Diosdado Macapagal International AIrport - Diosdado", "Puerto Princesa International Airport - Palawan"};
+    String[] International = {"Select", "Los Angeles International Airport - USA", "Dubai International Airport - UAE", "Changi Airport - Singapore", "Tokyo Haneda Airport - Londow hearthrow Airport - UK", "Hong Kong International Airport - HongKong","Paris Charles de Gaulle  - France", "Incheon International Airport - South Korea", "John F. Kennedy International Airport - USA","Beijing Capital International Airport - China", "São Paulo-Guarulhos International Airport - Brazil", "Kuala Lumpur International Airport - Malaysia","Rome Fiumicino Airport - Italy"};
+    String[] FromPH = {"Select", "Ninoy Aquino International Airport (NAIA) - Manila", "Mactan-Cebu International Airport - Cebu", "Clark International Airport - Pampanga", "Francisco Bangoy Internaitnoal Airport - Davao", "Iloilo International Airport - Iloilo", "Cagayan de Oro Airport - Cagayan de Oro", "Kalibo Internaitnoal Airport - Kalibo, Aklan", "Zamboanga Internaional Airport - Zamboanga", "Diosdado Macapagal International AIrport - Diosdado", "Puerto Princesa International Airport - Palawan"};
     
     public Book_A_Flight() {
         initComponents();
+        WiderDropDownCombo wider = new WiderDropDownCombo(Local);
+        
     }
 
     /**
@@ -27,18 +39,135 @@ public class Book_A_Flight extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Return_button = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        mdp = new javax.swing.JComboBox<>();
+        mode_of_payment_text = new javax.swing.JLabel();
+        date_of_flight_text = new javax.swing.JLabel();
+        dtr = new javax.swing.JLabel();
+        book_flight_button = new javax.swing.JButton();
+        date_of_flight = new javax.swing.JTextField();
+        date_of_return = new javax.swing.JTextField();
+        ps_option1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         F_Type = new javax.swing.JComboBox<>();
         F_To = new javax.swing.JComboBox<>();
         F_From = new javax.swing.JComboBox<>();
         F_Class = new javax.swing.JComboBox<>();
+        Return_button = new javax.swing.JButton();
+        passport = new javax.swing.JTextField();
+        passport_text = new javax.swing.JLabel();
+        namaewa = new javax.swing.JLabel();
+        namae = new javax.swing.JTextField();
+        p_option = new javax.swing.JLabel();
+        mdp1 = new javax.swing.JComboBox<>();
+        mode_of_payment_text1 = new javax.swing.JLabel();
+        date_of_flight_text1 = new javax.swing.JLabel();
+        dtr1 = new javax.swing.JLabel();
+        book_flight_button1 = new javax.swing.JButton();
+        date_of_flight1 = new javax.swing.JTextField();
+        date_of_return1 = new javax.swing.JTextField();
+        ps_option2 = new javax.swing.JLabel();
+        p_option1 = new javax.swing.JLabel();
+        flightTypeText = new javax.swing.JLabel();
+        flightFromText = new javax.swing.JLabel();
+        flightToText = new javax.swing.JLabel();
+        flightClassText = new javax.swing.JLabel();
+
+        mdp.setFont(new java.awt.Font("Aller", 1, 12)); // NOI18N
+        mdp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Credit /Debit Card", "E-Wallet" }));
+        mdp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mdpActionPerformed(evt);
+            }
+        });
+
+        mode_of_payment_text.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
+        mode_of_payment_text.setForeground(new java.awt.Color(255, 255, 255));
+        mode_of_payment_text.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mode_of_payment_text.setText("Payment Method:");
+
+        date_of_flight_text.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
+        date_of_flight_text.setForeground(new java.awt.Color(255, 255, 255));
+        date_of_flight_text.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        date_of_flight_text.setText("Date of Flight:");
+
+        dtr.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
+        dtr.setForeground(new java.awt.Color(255, 255, 255));
+        dtr.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dtr.setText("Date of Return:");
+
+        book_flight_button.setBackground(new java.awt.Color(74, 144, 226));
+        book_flight_button.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        book_flight_button.setText("Book!");
+        book_flight_button.setBorder(null);
+        book_flight_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        book_flight_button.setFocusPainted(false);
+        book_flight_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book_flight_buttonActionPerformed(evt);
+            }
+        });
+
+        date_of_flight.setText("yyyy-MM-dd");
+
+        date_of_return.setText("yyyy-MM-dd");
+
+        ps_option1.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
+        ps_option1.setForeground(new java.awt.Color(255, 255, 255));
+        ps_option1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ps_option1.setText("Flight Option :");
+        ps_option1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 102, 255));
 
+        jPanel1.setForeground(new java.awt.Color(153, 204, 255));
+
+        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel2.setForeground(new java.awt.Color(176, 208, 240));
+
+        F_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Local", "International" }));
+        F_Type.setMinimumSize(new java.awt.Dimension(28, 22));
+        F_Type.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F_TypeActionPerformed(evt);
+            }
+        });
+
+        F_To.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+                F_ToPopupMenuWillBecomeVisible(evt);
+            }
+        });
+        F_To.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F_ToActionPerformed(evt);
+            }
+        });
+
+        F_From.setToolTipText("");
+        F_From.setBorder(null);
+        F_From.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        F_From.addPopupMenuListener(new javax.swing.event.PopupMenuListener() {
+            public void popupMenuCanceled(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeInvisible(javax.swing.event.PopupMenuEvent evt) {
+            }
+            public void popupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {
+                F_FromPopupMenuWillBecomeVisible(evt);
+            }
+        });
+        F_From.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F_FromActionPerformed(evt);
+            }
+        });
+
+        Return_button.setBackground(new java.awt.Color(51, 51, 255));
         Return_button.setText("Return");
         Return_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,117 +175,461 @@ public class Book_A_Flight extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Flight Type:");
+        passport.setToolTipText("A0000000A");
 
-        jLabel4.setText("Flight From:");
+        passport_text.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
+        passport_text.setForeground(new java.awt.Color(255, 255, 255));
+        passport_text.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        passport_text.setText("Passport ID:");
 
-        jLabel5.setText("Flight To:");
+        namaewa.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
+        namaewa.setForeground(new java.awt.Color(255, 255, 255));
+        namaewa.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        namaewa.setText("Full Name:");
 
-        jLabel6.setText("Flight Class:");
-
-        F_Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Local", "International" }));
-        F_Type.addActionListener(new java.awt.event.ActionListener() {
+        namae.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                F_TypeActionPerformed(evt);
+                namaeActionPerformed(evt);
             }
         });
 
-        F_To.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT" }));
+        p_option.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
+        p_option.setForeground(new java.awt.Color(255, 255, 255));
+        p_option.setText("Passenger Option :");
+        p_option.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        F_From.setToolTipText("");
-        F_From.setBorder(null);
-        F_From.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        F_From.addActionListener(new java.awt.event.ActionListener() {
+        mdp1.setFont(new java.awt.Font("Aller", 1, 12)); // NOI18N
+        mdp1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cash", "Credit /Debit Card", "E-Wallet" }));
+        mdp1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                F_FromActionPerformed(evt);
+                mdp1ActionPerformed(evt);
             }
         });
 
-        F_Class.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT" }));
+        mode_of_payment_text1.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
+        mode_of_payment_text1.setForeground(new java.awt.Color(255, 255, 255));
+        mode_of_payment_text1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mode_of_payment_text1.setText("Payment Method:");
+
+        date_of_flight_text1.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
+        date_of_flight_text1.setForeground(new java.awt.Color(255, 255, 255));
+        date_of_flight_text1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        date_of_flight_text1.setText("Date of Flight:");
+
+        dtr1.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
+        dtr1.setForeground(new java.awt.Color(255, 255, 255));
+        dtr1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dtr1.setText("Date of Return:");
+
+        book_flight_button1.setBackground(new java.awt.Color(74, 144, 226));
+        book_flight_button1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        book_flight_button1.setText("Book");
+        book_flight_button1.setBorder(null);
+        book_flight_button1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        book_flight_button1.setFocusPainted(false);
+        book_flight_button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                book_flight_button1ActionPerformed(evt);
+            }
+        });
+
+        date_of_flight1.setText("yyyy-MM-dd");
+
+        date_of_return1.setText("yyyy-MM-dd");
+
+        ps_option2.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
+        ps_option2.setForeground(new java.awt.Color(255, 255, 255));
+        ps_option2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ps_option2.setText("Flight Option :");
+        ps_option2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        p_option1.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
+        p_option1.setForeground(new java.awt.Color(255, 255, 255));
+        p_option1.setText("Ticketing Option:");
+        p_option1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        flightTypeText.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
+        flightTypeText.setForeground(new java.awt.Color(255, 255, 255));
+        flightTypeText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        flightTypeText.setText("Flight Type:");
+
+        flightFromText.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
+        flightFromText.setForeground(new java.awt.Color(255, 255, 255));
+        flightFromText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        flightFromText.setText("Flight From:");
+
+        flightToText.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
+        flightToText.setForeground(new java.awt.Color(255, 255, 255));
+        flightToText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        flightToText.setText("Flight To:");
+
+        flightClassText.setFont(new java.awt.Font("Aller", 1, 13)); // NOI18N
+        flightClassText.setForeground(new java.awt.Color(255, 255, 255));
+        flightClassText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        flightClassText.setText("Flight Class:");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(p_option1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(flightTypeText, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(passport_text, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(passport, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(p_option)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(namaewa, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(namae, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(flightToText, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(flightFromText, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(flightClassText, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(F_Type, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(F_Class, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(F_From, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(F_To, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(book_flight_button1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ps_option2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(dtr1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(mode_of_payment_text1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(date_of_flight_text1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(mdp1, javax.swing.GroupLayout.Alignment.TRAILING, 0, 265, Short.MAX_VALUE)
+                                    .addComponent(date_of_flight1)
+                                    .addComponent(date_of_return1))))
+                        .addGap(29, 29, 29)
+                        .addComponent(Return_button)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(p_option)
+                    .addComponent(p_option1))
+                .addGap(9, 9, 9)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(passport_text)
+                            .addComponent(passport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(namae, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(namaewa)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(F_Type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(flightTypeText))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(F_From, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(flightFromText))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(F_To, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(flightToText))
+                        .addGap(11, 11, 11)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(F_Class, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(flightClassText))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Return_button, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(ps_option2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(mdp1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mode_of_payment_text1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(date_of_flight_text1)
+                            .addComponent(date_of_flight1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dtr1)
+                            .addComponent(date_of_return1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21)
+                        .addComponent(book_flight_button1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Return_button))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(F_Type, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(F_To, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(F_Class, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(F_From, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 259, Short.MAX_VALUE)))
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(F_Type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(F_From, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(F_To, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(F_Class, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
-                .addComponent(Return_button)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void Return_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Return_buttonActionPerformed
-    this.setVisible(false);
+    this.setVisible(true);
     AmiableAirlinesMM MM = new AmiableAirlinesMM();
     MM.setBounds(this.getX(), this.getY(), 570, 500);
     MM.setVisible(true);
+    this.dispose();
     }//GEN-LAST:event_Return_buttonActionPerformed
 
     private void F_TypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F_TypeActionPerformed
-    
+
     if (F_Type.getSelectedItem() == "Local"){
         F_From.removeAllItems();
         F_To.removeAllItems();
         F_Class.removeAllItems();
+        this.F_From.setPreferredSize(new Dimension (20, 28));
         for (int i = 0; i <= Local.length -1; i++){
             F_From.addItem(Local[i]);
         }
-    }
-    if (F_Type.getSelectedItem() == "International"){
+    }else if (F_Type.getSelectedItem() == "International"){
         F_From.removeAllItems();
         F_To.removeAllItems();
         F_Class.removeAllItems();
+        this.F_From.setPreferredSize(new Dimension (20, 28));
         for (int i = 0; i <= International.length -1; i++){
             F_From.addItem(International[i]);
         }
+    }else{
+        F_To.removeAllItems();
+        F_From.removeAllItems();
+        
     }
     }//GEN-LAST:event_F_TypeActionPerformed
 
     private void F_FromActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F_FromActionPerformed
-    
+        F_To.removeAllItems();
+        if (F_From.getSelectedItem() == "Select") {
+            return;
+        }
+        if (F_Type.getSelectedItem() == "International"){
+            for (int i = 0; i <= International.length - 1; i++){
+                if (International[i] != F_From.getSelectedItem() || International[i].equals("Select")){
+                    F_To.addItem(International[i]);
+                }
+            }
+            for (int i = 0; i <= FromPH.length - 1; i++){
+                if (FromPH[i] != F_From.getSelectedItem() || FromPH[i].equals("Select")){
+                    F_To.addItem(FromPH[i]);
+                }
+            }
+        } else if (F_Type.getSelectedItem() == "Local"){
+            for (int i = 0; i <= Local.length - 1; i++){
+                if (Local[i] != F_From.getSelectedItem() || Local[i].equals("Select")){
+                    F_To.addItem(Local[i]);
+                }
+            }
+        }
     }//GEN-LAST:event_F_FromActionPerformed
+        
+    private void F_FromPopupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_F_FromPopupMenuWillBecomeVisible
+         @SuppressWarnings("unchecked")
+    JComboBox<String> comboBox = (JComboBox<String>) evt.getSource();
+    
+    BasicComboPopup popup = (BasicComboPopup) comboBox.getAccessibleContext().getAccessibleChild(0);
 
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        JScrollPane scrollPane = (JScrollPane) SwingUtilities.getAncestorOfClass(JScrollPane.class, popup.getList());
+        
+        int popupWidth = popup.getList().getPreferredSize().width;
+        
+        Dimension scrollPaneSize = scrollPane.getPreferredSize();
+        scrollPaneSize.width = Math.max(popupWidth, 330);
+        scrollPane.setPreferredSize(scrollPaneSize);
+        scrollPane.setMaximumSize(scrollPaneSize);
+        
+        try {
+          Point location = comboBox.getLocationOnScreen();
+          int height = comboBox.getPreferredSize().height;
+          popup.setLocation(location.x, location.y + height - 1);
+          popup.setLocation(location.x, location.y + height);
+        } catch(IllegalComponentStateException exc) {
+        }
+      }
+    });
+    }//GEN-LAST:event_F_FromPopupMenuWillBecomeVisible
+
+    private void F_ToActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F_ToActionPerformed
+        if (F_To.getSelectedItem() == "Select") {
+            return;
+        }
+        String[] tiers = {"Economy", "Premium Economy", "Business", "First Class"};
+        
+        F_Class.removeAllItems();
+        for (int i = 0; i <= tiers.length - 1; i++){
+            F_Class.addItem(tiers[i]);
+        }
+    }//GEN-LAST:event_F_ToActionPerformed
+
+    private void F_ToPopupMenuWillBecomeVisible(javax.swing.event.PopupMenuEvent evt) {//GEN-FIRST:event_F_ToPopupMenuWillBecomeVisible
+        @SuppressWarnings("unchecked")
+    JComboBox<String> comboBox = (JComboBox<String>) evt.getSource();
+    
+    BasicComboPopup popup = (BasicComboPopup) comboBox.getAccessibleContext().getAccessibleChild(0);
+
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        JScrollPane scrollPane = (JScrollPane) SwingUtilities.getAncestorOfClass(JScrollPane.class, popup.getList());
+        
+        int popupWidth = popup.getList().getPreferredSize().width;
+        
+        Dimension scrollPaneSize = scrollPane.getPreferredSize();
+        scrollPaneSize.width = Math.max(popupWidth, 330);
+        scrollPane.setPreferredSize(scrollPaneSize);
+        scrollPane.setMaximumSize(scrollPaneSize);
+        
+        try {
+          Point location = comboBox.getLocationOnScreen();
+          int height = comboBox.getPreferredSize().height;
+          popup.setLocation(location.x, location.y + height - 1);
+          popup.setLocation(location.x, location.y + height);
+        } catch(IllegalComponentStateException exc) {
+        }
+      }
+    });
+    }//GEN-LAST:event_F_ToPopupMenuWillBecomeVisible
+
+    private void namaeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_namaeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_namaeActionPerformed
+
+    private void mdpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mdpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mdpActionPerformed
+
+    private void book_flight_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_flight_buttonActionPerformed
+        if (F_Type.getSelectedItem() != "Select"){
+            if (F_From.getSelectedItem() != ""){
+                if (F_To.getSelectedItem() != ""){
+                    if (F_Class.getSelectedItem() != ""){
+                        if (passport.getText() != "" && passport.getText().length() == 9){
+                            if (namae.getText() != "" && namae.getText().length() >= 6){
+                                var result = flightdb.addFlight(
+                                    F_Type.getSelectedItem().toString(),
+                                    F_To.getSelectedItem().toString(),
+                                    F_From.getSelectedItem().toString(),
+                                     F_Class.getSelectedItem().toString(),
+                                    namae.getText(),
+                                    passport.getText(),
+                                    mdp.getSelectedItem().toString(),
+                                    date_of_flight.getText(),
+                                    date_of_return.getText()
+                                );
+                                if (result != -1){
+                                    alert("Booked! ID: "+result);
+                                } else {
+                                    alert("Failed to Book!");
+                                }
+                            } else {
+                                alert("Please enter your Full name!");
+                            }
+                        } else {
+                            alert("Invalid Passport!");
+                        }
+                    } else {
+                        alert("Please select a flight tier!");
+                    }
+                } else {
+                    alert("Please select a flight to!");
+                }
+            } else {
+                alert("Please select a flight from!");
+            }
+        } else {
+            alert("Please select a flight type!");
+        }
+    }//GEN-LAST:event_book_flight_buttonActionPerformed
+
+    private void mdp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mdp1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mdp1ActionPerformed
+
+    private void book_flight_button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_book_flight_button1ActionPerformed
+        if (F_Type.getSelectedItem() != "Select"){
+            if (F_From.getSelectedItem() != ""){
+                if (F_To.getSelectedItem() != ""){
+                    if (F_Class.getSelectedItem() != ""){
+                        if (passport.getText() != "" && passport.getText().length() == 9){
+                            if (namae.getText() != "" && namae.getText().length() >= 6){
+                                var result = flightdb.addFlight(
+                                    F_Type.getSelectedItem().toString(),
+                                    F_To.getSelectedItem().toString(),
+                                    F_From.getSelectedItem().toString(),
+                                    F_Class.getSelectedItem().toString(),
+                                    namae.getText(),
+                                    passport.getText(),
+                                    mdp.getSelectedItem().toString(),
+                                    date_of_flight.getText(),
+                                    date_of_return.getText()
+                                );
+                                if (result != -1){
+                                    alert("Booked! ID: "+result);
+                                } else {
+                                    alert("Failed to Book!");
+                                }
+                            } else {
+                                alert("Please enter your Full name!");
+                            }
+                        } else {
+                            alert("Invalid Passport!");
+                        }
+                    } else {
+                        alert("Please select a flight tier!");
+                    }
+                } else {
+                    alert("Please select a flight to!");
+                }
+            } else {
+                alert("Please select a flight from!");
+            }
+        } else {
+            alert("Please select a flight type!");
+        }
+    }//GEN-LAST:event_book_flight_button1ActionPerformed
+ public static void alert(String mess){
+        JOptionPane.showMessageDialog(null, mess, "Alert!", JOptionPane.WARNING_MESSAGE);
+    }
     /**
      * @param args the command line arguments
      */
@@ -168,7 +641,7 @@ public class Book_A_Flight extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -198,9 +671,33 @@ public class Book_A_Flight extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> F_To;
     private javax.swing.JComboBox<String> F_Type;
     private javax.swing.JButton Return_button;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JButton book_flight_button;
+    private javax.swing.JButton book_flight_button1;
+    private javax.swing.JTextField date_of_flight;
+    private javax.swing.JTextField date_of_flight1;
+    private javax.swing.JLabel date_of_flight_text;
+    private javax.swing.JLabel date_of_flight_text1;
+    private javax.swing.JTextField date_of_return;
+    private javax.swing.JTextField date_of_return1;
+    private javax.swing.JLabel dtr;
+    private javax.swing.JLabel dtr1;
+    private javax.swing.JLabel flightClassText;
+    private javax.swing.JLabel flightFromText;
+    private javax.swing.JLabel flightToText;
+    private javax.swing.JLabel flightTypeText;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JComboBox<String> mdp;
+    private javax.swing.JComboBox<String> mdp1;
+    private javax.swing.JLabel mode_of_payment_text;
+    private javax.swing.JLabel mode_of_payment_text1;
+    private javax.swing.JTextField namae;
+    private javax.swing.JLabel namaewa;
+    private javax.swing.JLabel p_option;
+    private javax.swing.JLabel p_option1;
+    private javax.swing.JTextField passport;
+    private javax.swing.JLabel passport_text;
+    private javax.swing.JLabel ps_option1;
+    private javax.swing.JLabel ps_option2;
     // End of variables declaration//GEN-END:variables
 }
