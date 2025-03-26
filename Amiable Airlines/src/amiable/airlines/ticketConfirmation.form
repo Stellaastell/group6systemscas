@@ -33,21 +33,6 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="flightClass" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="flightTo" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="flightFrom" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="flightType" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                               <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -55,21 +40,35 @@
                               <Component id="modeResult" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="14" pref="14" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="dorResult" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="dofResult" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nameResult" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ppIDResult" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="flightClass" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="flightTo" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="flightFrom" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="flightType" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="dorResult" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="dofResult" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="nameResult" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="ppIDResult" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -162,21 +161,25 @@
     </Component>
     <Component class="javax.swing.JLabel" name="flightType">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="       "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="flightFrom">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="       "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="flightTo">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="       "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="flightClass">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="       "/>
       </Properties>
     </Component>
@@ -184,6 +187,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Confirm"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirmButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="cancelButton">
       <Properties>
@@ -215,21 +221,25 @@
     </Component>
     <Component class="javax.swing.JLabel" name="ppIDResult">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="       "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="nameResult">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="       "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="dofResult">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="       "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="dorResult">
       <Properties>
+        <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="text" type="java.lang.String" value="       "/>
       </Properties>
     </Component>

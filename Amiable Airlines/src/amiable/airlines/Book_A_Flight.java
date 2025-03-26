@@ -44,8 +44,6 @@ public class Book_A_Flight extends javax.swing.JFrame {
         date_of_flight_text = new javax.swing.JLabel();
         dtr = new javax.swing.JLabel();
         book_flight_button = new javax.swing.JButton();
-        date_of_flight = new javax.swing.JTextField();
-        date_of_return = new javax.swing.JTextField();
         ps_option1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -64,8 +62,8 @@ public class Book_A_Flight extends javax.swing.JFrame {
         date_of_flight_text1 = new javax.swing.JLabel();
         dtr1 = new javax.swing.JLabel();
         book_flight_button1 = new javax.swing.JButton();
-        date_of_flight1 = new javax.swing.JTextField();
-        date_of_return1 = new javax.swing.JTextField();
+        date_of_flight = new javax.swing.JTextField();
+        date_of_return = new javax.swing.JTextField();
         ps_option2 = new javax.swing.JLabel();
         p_option1 = new javax.swing.JLabel();
         flightTypeText = new javax.swing.JLabel();
@@ -108,10 +106,6 @@ public class Book_A_Flight extends javax.swing.JFrame {
                 book_flight_buttonActionPerformed(evt);
             }
         });
-
-        date_of_flight.setText("yyyy-MM-dd");
-
-        date_of_return.setText("yyyy-MM-dd");
 
         ps_option1.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         ps_option1.setForeground(new java.awt.Color(255, 255, 255));
@@ -252,11 +246,11 @@ public class Book_A_Flight extends javax.swing.JFrame {
         });
         jPanel2.add(book_flight_button1, new org.netbeans.lib.awtextra.AbsoluteConstraints(52, 292, 528, 33));
 
-        date_of_flight1.setText("yyyy-MM-dd");
-        jPanel2.add(date_of_flight1, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 225, 265, -1));
+        date_of_flight.setText("yyyy-MM-dd");
+        jPanel2.add(date_of_flight, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 225, 265, -1));
 
-        date_of_return1.setText("yyyy-MM-dd");
-        jPanel2.add(date_of_return1, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 251, 265, -1));
+        date_of_return.setText("yyyy-MM-dd");
+        jPanel2.add(date_of_return, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 251, 265, -1));
 
         ps_option2.setFont(new java.awt.Font("Aller", 1, 14)); // NOI18N
         ps_option2.setForeground(new java.awt.Color(255, 255, 255));
@@ -294,8 +288,6 @@ public class Book_A_Flight extends javax.swing.JFrame {
         flightClassText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         flightClassText.setText("Flight Class:");
         jPanel2.add(flightClassText, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 139, 99, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\admin\\Downloads\\output-onlinepngtools (1).png")); // NOI18N
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, -10, -1, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -512,8 +504,23 @@ public class Book_A_Flight extends javax.swing.JFrame {
                         if (passport.getText() != "" && passport.getText().length() == 9){
                             if (namae.getText() != "" && namae.getText().length() >= 6){
                                 
+                                ticketConfirmation tConfirm = new ticketConfirmation();
+                                tConfirm.setVisible(true);
+                                tConfirm.setBounds(this.getX()+180, this.getY()+90, tConfirm.getWidth(), tConfirm.getHeight());
                                 
+                                tConfirm.addFlight(
+                                        F_Type.getSelectedItem().toString(),
+                                        F_To.getSelectedItem().toString(),
+                                        F_From.getSelectedItem().toString(),
+                                        F_Class.getSelectedItem().toString(),                                        
+                                        namae.getText(),
+                                        passport.getText(),
+                                        mdp.getSelectedItem().toString(),
+                                        date_of_flight.getText(),
+                                        date_of_return.getText()
+                                );
                                 
+                                /*/ IF HAVE DB
                                 var result = flightdb.addFlight(
                                     F_Type.getSelectedItem().toString(),
                                     F_To.getSelectedItem().toString(),
@@ -530,6 +537,7 @@ public class Book_A_Flight extends javax.swing.JFrame {
                                 } else {
                                     alert("Failed to Book!");
                                 }
+                                /*/
                             } else {
                                 alert("Please enter your Full name!");
                             }
@@ -599,11 +607,9 @@ public class Book_A_Flight extends javax.swing.JFrame {
     private javax.swing.JButton book_flight_button;
     private javax.swing.JButton book_flight_button1;
     private javax.swing.JTextField date_of_flight;
-    private javax.swing.JTextField date_of_flight1;
     private javax.swing.JLabel date_of_flight_text;
     private javax.swing.JLabel date_of_flight_text1;
     private javax.swing.JTextField date_of_return;
-    private javax.swing.JTextField date_of_return1;
     private javax.swing.JLabel dtr;
     private javax.swing.JLabel dtr1;
     private javax.swing.JLabel flightClassText;

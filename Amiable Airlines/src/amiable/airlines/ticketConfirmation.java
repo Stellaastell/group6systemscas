@@ -5,6 +5,8 @@
  */
 package amiable.airlines;
 
+import static amiable.airlines.Book_A_Flight.alert;
+
 /**
  *
  * @author admin
@@ -74,15 +76,24 @@ public class ticketConfirmation extends javax.swing.JFrame {
 
         jLabel4.setText("Flight Type:");
 
+        flightType.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         flightType.setText("       ");
 
+        flightFrom.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         flightFrom.setText("       ");
 
+        flightTo.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         flightTo.setText("       ");
 
+        flightClass.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         flightClass.setText("       ");
 
         confirmButton.setText("Confirm");
+        confirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmButtonActionPerformed(evt);
+            }
+        });
 
         cancelButton.setText("Cancel");
         cancelButton.addActionListener(new java.awt.event.ActionListener() {
@@ -99,12 +110,16 @@ public class ticketConfirmation extends javax.swing.JFrame {
 
         jLabel8.setText("Passport ID:");
 
+        ppIDResult.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         ppIDResult.setText("       ");
 
+        nameResult.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         nameResult.setText("       ");
 
+        dofResult.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         dofResult.setText("       ");
 
+        dorResult.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         dorResult.setText("       ");
 
         jLabel9.setText("Mode of Payment:");
@@ -125,36 +140,35 @@ public class ticketConfirmation extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel4))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(flightClass)
-                                    .addComponent(flightTo, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(flightFrom, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(flightType)))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGap(97, 97, 97)
                                 .addComponent(jLabel9)
                                 .addGap(18, 18, 18)
                                 .addComponent(modeResult))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
-                                        .addGap(14, 14, 14))
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addComponent(jLabel6)
+                                            .addGap(14, 14, 14))
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel7)
+                                        .addComponent(jLabel8))
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel4))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(dorResult)
-                                    .addComponent(dofResult, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(nameResult, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(ppIDResult))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(flightClass)
+                                        .addComponent(flightTo, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(flightFrom, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(flightType))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(dorResult)
+                                        .addComponent(dofResult, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(nameResult, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(ppIDResult)))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -212,6 +226,16 @@ public class ticketConfirmation extends javax.swing.JFrame {
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
             this.dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
+
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+        if (flightType.getText() != "       "){
+            alert("Booked Successfully!");
+            this.dispose();
+        }else{
+            alert("Error!");
+            this.dispose();
+        }
+    }//GEN-LAST:event_confirmButtonActionPerformed
 
     /**
      * @param args the command line arguments
