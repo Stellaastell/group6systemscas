@@ -326,7 +326,7 @@ public class Book_A_Flight extends javax.swing.JFrame {
     private void Return_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Return_buttonActionPerformed
     this.setVisible(true);
     AmiableAirlinesMM MM = new AmiableAirlinesMM();
-    MM.setBounds(this.getX(), this.getY(), 570, 500);
+    MM.setBounds(this.getX(), this.getY(), MM.getWidth(), MM.getHeight());
     MM.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_Return_buttonActionPerformed

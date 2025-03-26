@@ -40,6 +40,7 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(91, 202, 226));
+        jPanel1.setPreferredSize(new java.awt.Dimension(700, 476));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
@@ -73,14 +74,19 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
 
         jButton1.setText("Exit");
         jButton1.setMaximumSize(new java.awt.Dimension(109, 23));
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, 170, 60));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, 170, 50));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(240, 240, 240));
         jLabel3.setText("\"The Sky is not the limit for us\"");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 700, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 700, 476));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -99,6 +105,12 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
     booking.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_Book_buttonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ExitConfirmationPanel exitConf = new ExitConfirmationPanel();
+        exitConf.setVisible(true);
+        exitConf.setBounds(this.getX()+190, this.getY()+180, exitConf.getWidth(), exitConf.getHeight());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
