@@ -167,6 +167,11 @@ public class Book_A_Flight extends javax.swing.JFrame {
         });
         jPanel2.add(F_From, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 72, 88, -1));
 
+        F_Class.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F_ClassActionPerformed(evt);
+            }
+        });
         jPanel2.add(F_Class, new org.netbeans.lib.awtextra.AbsoluteConstraints(113, 138, 88, -1));
 
         Return_button.setBackground(new java.awt.Color(51, 51, 255));
@@ -330,6 +335,7 @@ public class Book_A_Flight extends javax.swing.JFrame {
         F_To.removeAllItems();
         F_Class.removeAllItems();
         this.F_From.setPreferredSize(new Dimension (20, 28));
+        
         for (int i = 0; i <= Local.length -1; i++){
             F_From.addItem(Local[i]);
         }
@@ -560,6 +566,10 @@ public class Book_A_Flight extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_book_flight_button1ActionPerformed
+
+    private void F_ClassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F_ClassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_F_ClassActionPerformed
  public static void alert(String mess){
         JOptionPane.showMessageDialog(null, mess, "Alert!", JOptionPane.WARNING_MESSAGE);
     }

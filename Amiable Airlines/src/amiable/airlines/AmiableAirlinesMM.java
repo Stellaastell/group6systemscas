@@ -30,13 +30,13 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         Book_button = new javax.swing.JButton();
-        Check_Flight_button = new javax.swing.JButton();
         Exit_Conf_button = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(91, 202, 226));
@@ -57,10 +57,6 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
         });
         jPanel1.add(Book_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 167, 47));
 
-        Check_Flight_button.setText("CHECK AVAILABLE FLIGHTS");
-        Check_Flight_button.setMargin(new java.awt.Insets(2, -14, 2, -14));
-        jPanel1.add(Check_Flight_button, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 330, 167, 55));
-
         Exit_Conf_button.setText("EXIT");
         Exit_Conf_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +75,7 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 400, 170, 50));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 170, 50));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(240, 240, 240));
@@ -102,7 +98,12 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
     this.setVisible(false);
     Book_A_Flight booking = new Book_A_Flight();
     booking.setBounds(this.getX(), this.getY(), booking.getWidth(), booking.getHeight());
+    
+    
     booking.setVisible(true);
+    
+    
+    
     this.dispose();
     }//GEN-LAST:event_Book_buttonActionPerformed
 
@@ -110,6 +111,7 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
         ExitConfirmationPanel exitConf = new ExitConfirmationPanel();
         exitConf.setVisible(true);
         exitConf.setBounds(this.getX()+190, this.getY()+180, exitConf.getWidth(), exitConf.getHeight());
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -145,14 +147,15 @@ public class AmiableAirlinesMM extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AmiableAirlinesMM().setVisible(true);
+                AmiableAirlinesMM mm = new AmiableAirlinesMM();
+                mm.setVisible(true);
+                mm.setBounds(mm.getX()+400, mm.getY()+100, mm.getWidth(), mm.getHeight());
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Book_button;
-    private javax.swing.JButton Check_Flight_button;
     private javax.swing.JButton Exit_Conf_button;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

@@ -3,11 +3,12 @@ package amiable.airlines;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 
+
 public class flightdb {
 
-    static final String DB_URL = "jdbc:mysql://localhost:3306/flightdb";
-    static final String USER = "root";
-    static final String PASS = "";
+    static final String DB_URL = "jdbc:mysql://amazon-interstate.gl.at.ply.gg:14183/flightdb";
+    static final String USER = "kineme";
+    static final String PASS = "123456";
 
     private static Connection conn = null;
     private static Statement stmt = null;

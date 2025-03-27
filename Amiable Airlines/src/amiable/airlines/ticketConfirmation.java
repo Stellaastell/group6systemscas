@@ -229,7 +229,22 @@ public class ticketConfirmation extends javax.swing.JFrame {
 
     private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
         if (flightType.getText() != "       "){
-            alert("Booked Successfully!");
+            var result = flightdb.addFlight(
+                flightType.getText().toString(),
+                flightTo.getText().toString(),
+                flightFrom.getText().toString(),
+                flightClass.getText().toString(),
+                nameResult.getText(),
+                ppIDResult.getText(),
+                modeResult.getText().toString(),
+                dofResult.getText(),
+                dorResult.getText()
+            );
+            if (result != -1){
+                alert("Booked Successfully! with an ID: "+result);
+            } else {
+                alert("Failed to Book!");
+            }
             this.dispose();
         }else{
             alert("Error!");

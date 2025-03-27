@@ -107,8 +107,6 @@ System.exit(0);
     private void NOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NOActionPerformed
     this.setVisible(false);
     AmiableAirlinesMM MM = new AmiableAirlinesMM();
-    MM.setBounds(this.getX(), this.getY(), 570, 500);
-    MM.setVisible(true);
     this.dispose();
     }//GEN-LAST:event_NOActionPerformed
 
